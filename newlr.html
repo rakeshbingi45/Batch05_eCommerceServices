@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register - VMR Electronics Mart</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">
+            <a href="index.html" style="color: rgb(0, 0, 0); text-decoration: none;">VMR Electronics Mart</a>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <!-- Login Form (default) -->
+        <div id="login-form" class="auth-form active">
+            <h2>Login</h2>
+            <form action="login-action.html" method="POST">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="username" required>
+                
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-register">Register Here</a></p>
+        </div>
+
+        <!-- Register Form -->
+        <div id="register-form" class="auth-form">
+            <h2>Register</h2>
+            <form action="C:/xampp/htdocs/Project/include/register.php" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="register-username">Username</label>
+                <input type="text" id="register-username" name="username" required>
+                
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" name="password" required>
+                
+                <button type="submit">Register</button>
+            </form>            
+            <p>Already have an account? <a href="#" id="show-login">Login Here</a></p>
+        </div>
+    </section>
+
+    <!-- JavaScript to toggle forms -->
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const showRegister = document.getElementById('show-register');
+        const showLogin = document.getElementById('show-login');
+
+        // Show Register Form and hide Login Form
+        showRegister.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginForm.classList.remove('active');
+            registerForm.classList.add('active');
+        });
+
+        // Show Login Form and hide Register Form
+        showLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            registerForm.classList.remove('active');
+            loginForm.classList.add('active');
+        });
+    </script>
+</body>
+</html>

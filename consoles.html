@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consoles - VMR Electronics Mart</title>
+    <link rel="stylesheet" href="stylesm.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="site-title">
+            <a href="index.html" style="color: rgb(0, 0, 0); text-decoration: none;">VMR Electronics Mart - Consoles</a>
+        </div>
+        <nav>
+            
+            <input type="text" size="50" placeholder="Search for products...">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <aside class="sidebar">
+            <h3>Filter by Company</h3>
+            <ul>
+                <li><input type="checkbox" id="asus" name="company" value="Asus" onchange="filterProducts()"> Asus</li>
+                <li><input type="checkbox" id="lenovo" name="company" value="Lenovo" onchange="filterProducts()"> Lenovo</li>
+                <li><input type="checkbox" id="nintendo" name="company" value="Nintendo" onchange="filterProducts()"> Nintendo</li>
+                <li><input type="checkbox" id="ps" name="company" value="Play Station" onchange="filterProducts()"> Play Station</li>
+                <li><input type="checkbox" id="xbox" name="company" value="Xbox" onchange="filterProducts()"> Xbox</li>
+            </ul>
+
+            <h3>Filter by Storage</h3>
+            <ul>
+                <li><input type="checkbox" id="256gb" name="storage" value="256GB" onchange="filterProducts()"> 256GB</li>
+                <li><input type="checkbox" id="512gb" name="storage" value="512GB" onchange="filterProducts()"> 512GB</li>
+                <li><input type="checkbox" id="1tb" name="storage" value="1TB" onchange="filterProducts()"> 1TB</li>
+            </ul>
+        </aside>
+
+        <div class="products-section">
+            <div class="sort-options">
+                <label for="sort">Sort by:</label>
+                <select id="sort" onchange="sortProducts()">
+                    <option value="low-to-high">Price: Low to High</option>
+                    <option value="high-to-low">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div class="product-list" id="product-list">
+                <!-- Example products -->
+                <div class="product-item" data-company="Asus" data-storage="512GB" data-price="179900">
+                    <a href="laptop-detail.html?name=Asus%20ROG%20Zephyrus%20G16%20(2024)">
+                        <img src="Images/xbox.jpg" alt="g14">
+                        <h3>Xbox (2024) </h3>
+                        <p>Price: ₹59,900</p>
+                    </a>
+                </div>
+                <div class="product-item" data-company="Acer" data-storage="512GB" data-price="59900">
+                    <a href="laptop-detail.html?name=Apple%20iPhone%2016%20Pro%20(256GB)">
+                        <img src="Images/zephyrusg14.png" alt="acer">
+                        <h3>Acer Swift GO 14 (512GB)</h3>
+                        <p>Price: ₹59,900</p>
+                    </a>
+                </div>
+                <div class="product-item" data-company="HP" data-storage="1TB" data-price="84999">
+                    <a href="laptop-detail.html?name=Samsung%20Galaxy%20S24%20Ultra%20(256GB)">
+                        <img src="Images/zephyrusg14.png" alt="hp">
+                        <h3>HP Pavilion Plus AMD (1TB)</h3>
+                        <p>Price: ₹84,999</p>
+                    </a>
+                </div>
+                <div class="product-item" data-company="Dell" data-storage="512GB" data-price="69999">
+                    <a href="laptop-detail.html?name=OnePlus%2012%20(256GB)">
+                        <img src="Images/zephyrusg14.png" alt="OnePlus">
+                        <h3>Dell Inspiron 14 Intel (512GB)</h3>
+                        <p>Price: ₹69,999</p>
+                    </a>
+                </div>
+                <div class="product-item" data-company="Lenovo" data-storage="1TB" data-price="165999">
+                    <a href="laptop-detail.html?name=Xiaomi%2014%20Ultra%20(512GB)">
+                        <img src="Images/zephyrusg14.png" alt="Xiaomi">
+                        <h3>Lenovo Legion 7i Pro (1 TB)</h3>
+                        <p>Price: ₹1,65,999</p>
+                    </a>
+                </div>
+                <div class="product-item" data-company="MSI" data-storage="2TB" data-price="499990">
+                    <a href="laptop-detail.html?name=Google%20Pixel%209">
+                        <img src="Images/zephyrusg14.png" alt="msi">
+                        <h3>MSI Titan 18HX Intel (2024)</h3>
+                        <p>Price: ₹4,99,990</p>
+                    </a>
+                </div>
+                <div class="product-item" data-company="Apple" data-storage="256GB" data-price="109999">
+                    <a href="laptop-detail.html?name=Google%20Pixel%209%20Pro%20(256GB)">
+                        <img src="Images/zephyrusg14.png" alt="macbook air">
+                        <h3>Macbook Air M3 (256 GB)</h3>
+                        <p>Price: ₹1,09,999</p>
+                    </a>
+                </div>
+                <div class="product-item" data-company="Apple" data-storage="512GB" data-price="189999">
+                    <a href="laptop-detail.html?name=Sony%20Xperia%201%20VI%20(256GB)">
+                        <img src="Images/zephyrusg14.png" alt="macbook pro">
+                        <h3>Macbook Pro M3 Max (512 GB)</h3>
+                        <p>Price: ₹1,89,999</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VMR Electronics Mart | Privacy Policy</p>
+    </footer>
+
+    <!-- JavaScript for Sorting and Filtering -->
+    <script>
+        // Sort products by price
+        function sortProducts() {
+            const sortOption = document.getElementById("sort").value;
+            const productList = document.getElementById("product-list");
+            const products = Array.from(productList.getElementsByClassName("product-item"));
+
+            products.sort((a, b) => {
+                const priceA = parseInt(a.getAttribute("data-price"));
+                const priceB = parseInt(b.getAttribute("data-price"));
+
+                if (sortOption === "low-to-high") {
+                    return priceA - priceB;
+                } else {
+                    return priceB - priceA;
+                }
+            });
+
+            productList.innerHTML = "";
+            products.forEach(product => productList.appendChild(product));
+        }
+
+        // Filter products by company and storage
+        function filterProducts() {
+            const selectedCompanies = Array.from(document.querySelectorAll('input[name="company"]:checked')).map(cb => cb.value);
+            const selectedStorage = Array.from(document.querySelectorAll('input[name="storage"]:checked')).map(cb => cb.value);
+            
+            const productList = document.getElementById("product-list");
+            const products = Array.from(productList.getElementsByClassName("product-item"));
+
+            products.forEach(product => {
+                const company = product.getAttribute("data-company");
+                const storage = product.getAttribute("data-storage");
+
+                const companyMatch = selectedCompanies.length === 0 || selectedCompanies.includes(company);
+                const storageMatch = selectedStorage.length === 0 || selectedStorage.includes(storage);
+
+                if (companyMatch && storageMatch) {
+                    product.style.display = "block"; // Show product if it matches both company and storage filters
+                } else {
+                    product.style.display = "none"; // Hide product if it doesn't match
+                }
+            });
+        }
+    </script>
+</body>
+</html>

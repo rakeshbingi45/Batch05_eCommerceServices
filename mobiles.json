@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Apple iPhone 16",
+        "price": 79999,
+        "image": "Images/16.jpg",
+        "description": "The latest Apple iPhone 16 with advanced features.",
+        "specifications": [
+            "Display: 6.1 inches",
+            "Processor: A18 Bionic",
+            "RAM: 8GB",
+            "Storage: 128GB",
+            "Camera: 48MP + 12MP",
+            "Battery: 3095mAh"
+        ],
+        "features": [
+            "Super Retina XDR display",
+            "A18 Bionic chip for lightning-fast performance",
+            "5G capable",
+            "Face ID for secure authentication",
+            "Water and dust resistance (IP68)"
+        ],
+        "reviews": [
+            {
+                "user": "John Doe",
+                "comment": "Great phone! Highly recommend it."
+            },
+            {
+                "user": "Jane Smith",
+                "comment": "The camera quality is outstanding."
+            },
+            {
+                "user": "Mike Brown",
+                "comment": "Worth every penny!"
+            }
+        ]
+    },
+    {
+        "name": "Apple iPhone 16 Pro (256GB)",
+        "price": 129900,
+        "image": "Images/16pro.webp",
+        "description": "The latest Apple iPhone 16 Pro with advanced features and camera button.",
+        "specifications": [
+            "Display: 6.3 inches",
+            "Processor: A18 Pro Bionic",
+            "RAM: 8GB",
+            "Storage: 256GB",
+            "Camera: 48MP + 12MP + 12MP",
+            "Battery: 4347mAh"
+        ],
+        "features": [
+            "Super Retina XDR display",
+            "A18 Pro Bionic chip for lightning-fast performance",
+            "5G capable",
+            "Face ID for secure authentication",
+            "Water and dust resistance (IP68)"
+        ],
+        "reviews": [
+            {
+                "user": "John Doe",
+                "comment": "Great phone! Highly recommend it."
+            },
+            {
+                "user": "Jane Smith",
+                "comment": "The camera quality is outstanding."
+            },
+            {
+                "user": "Mike Brown",
+                "comment": "Worth every penny!"
+            }
+        ]
+    },
+    {
+        "name": "Samsung Galaxy S24 Ultra (256GB)",
+        "price": 134999,
+        "image": "Images/sgu24.jpg",
+        "description": "Experience the high-quality Samsung Galaxy S24 Ultra with an amazing camera.",
+        "specifications": [
+            "Display: 6.8 inches",
+            "Processor: Snapdragon 8 Gen 3",
+            "RAM: 12GB",
+            "Storage: 256GB",
+            "Camera: 200MP + 50MP + 10MP + 10MP",
+            "Battery: 5000mAh"
+        ],
+        "features": [
+            "Dynamic AMOLED 2X display",
+            "Triple camera system",
+            "5G capable",
+            "Fast charging and wireless charging"
+        ],
+        "reviews": [
+            {
+                "user": "Alice Walker",
+                "comment": "An amazing device for photography."
+            },
+            {
+                "user": "Robert White",
+                "comment": "Great performance and battery life."
+            }
+        ]
+    }
+]

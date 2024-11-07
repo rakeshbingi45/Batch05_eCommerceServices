@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - VMR Electronics Mart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <!-- Header and Navigation -->
+    <header>
+        <div class="site-title">
+            <a href="index.html" style="color: rgb(0, 0, 0); text-decoration: none;">VMR Electronics Mart - Payment</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="newlr.html">Welcome, Rakesh!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Payment Section -->
+    <section class="payment">
+    <h2>Payment Gateway</h2>
+    <form>
+        <!-- Billing Address -->
+        <label for="address">Billing Address:</label>
+        <input type="text" id="address" name="address" placeholder="Enter address...">
+
+        <!-- Payment Method Selection -->
+        <label for="payment-method">Select Payment Method:</label>
+        <select id="payment-method" name="payment-method" onchange="showPaymentFields(this.value)">
+            <option value="">-- Select Payment Method --</option>
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+            <option value="upi">UPI</option>
+            <option value="paypal">PayPal</option>
+        </select>
+
+        <!-- Credit Card Details -->
+        <div id="credit-details" style="display: none;">
+            <label for="credit-card">Credit Card Number:</label>
+            <input type="text" id="credit-card" name="credit-card" placeholder="Enter credit card number...">
+            
+            <label for="credit-expiry">Expiry Date:</label>
+            <input type="month" id="credit-expiry" name="credit-expiry">
+
+            <label for="credit-cvv">CVV:</label>
+            <input type="text" id="credit-cvv" name="credit-cvv" placeholder="Enter CVV...">
+        </div>
+
+        <!-- Debit Card Details -->
+        <div id="debit-details" style="display: none;">
+            <label for="debit-card">Debit Card Number:</label>
+            <input type="text" id="debit-card" name="debit-card" placeholder="Enter debit card number...">
+            
+            <label for="debit-expiry">Expiry Date:</label>
+            <input type="month" id="debit-expiry" name="debit-expiry">
+
+            <label for="debit-cvv">CVV:</label>
+            <input type="text" id="debit-cvv" name="debit-cvv" placeholder="Enter CVV...">
+        </div>
+
+        <!-- UPI Payment -->
+        <div id="upi-details" style="display: none;">
+            <label for="upi-id">UPI ID:</label>
+            <input type="text" id="upi-id" name="upi-id" placeholder="Enter UPI ID (e.g., yourname@bank)...">
+        </div>
+
+        <!-- PayPal Payment -->
+        <div id="paypal-details" style="display: none;">
+            <p>You'll be redirected to PayPal to complete your purchase.</p>
+        </div>
+
+        <!-- Order Summary and Submit -->
+        <div class="order-summary">
+            <p>Total: ₹ 2,59,998</p>
+        </div>
+        <button type="submit">Place Order</button>
+    </form>
+</section>
+
+
+
+    <footer>
+        <p>&copy; 2024 VMR Electronics Mart | Privacy Policy</p>
+    </footer>
+    <!-- JavaScript to Display Fields Based on Payment Selection -->
+<script>
+    function showPaymentFields(method) {
+        // Hide all payment option details initially
+        document.getElementById("credit-details").style.display = "none";
+        document.getElementById("debit-details").style.display = "none";
+        document.getElementById("upi-details").style.display = "none";
+        document.getElementById("paypal-details").style.display = "none";
+
+        // Show the selected payment option details
+        if (method === "credit") {
+            document.getElementById("credit-details").style.display = "block";
+        } else if (method === "debit") {
+            document.getElementById("debit-details").style.display = "block";
+        } else if (method === "upi") {
+            document.getElementById("upi-details").style.display = "block";
+        } else if (method === "paypal") {
+            document.getElementById("paypal-details").style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>

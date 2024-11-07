@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMR Electronics Mart</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="site-title">
+            <a href="index.html" style="color: rgb(0, 0, 0); text-decoration: none;">VMR Electronics Mart</a>
+        </div>
+        <nav>
+            
+            <input type="text" size="50" placeholder="Search for products...">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="newlr.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+     <!-- Banner Section -->
+     <section class="banner" id="banner1">
+        <h2>Welcome to VMR Electronics Mart!</h2>
+        <img src="Images/J1.webp" alt="Promotional Banner 1"> <!-- Replace with your first banner image path -->
+        <p>Discover the latest in electronics at unbeatable prices!</p>
+        <button class="nav-button previous" onclick="changeBanner(-1)">Previous</button>
+        <button class="nav-button next" onclick="changeBanner(1)">Next</button>
+    </section>
+
+    <section class="banner" id="banner2">
+        <h2>Exclusive Offers!</h2>
+        <img src="Images/J2.webp" alt="Exclusive Offers"> <!-- Replace with your second banner image path -->
+        <p>Don't miss out on our exclusive offers.</p>
+        <button class="nav-button previous" onclick="changeBanner(-1)">Previous</button>
+        <button class="nav-button next" onclick="changeBanner(1)">Next</button>
+    </section>
+
+    <section class="banner" id="banner3">
+        <h2>Latest Arrivals!</h2>
+        <img src="Images/J3.webp" alt="Latest Arrivals"> <!-- Replace with your third banner image path -->
+        <p>Check out our latest arrivals in electronics!</p>
+        <button class="nav-button previous" onclick="changeBanner(-1)">Previous</button>
+        <button class="nav-button next" onclick="changeBanner(1)">Next</button>
+    </section>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-container">
+            <div class="product-card" data-company="Apple" data-storage="128GB" data-price="79900">
+                <a href="mobile-detail.html?name=Apple%20iPhone%2016%20(128GB)">
+                    <img src="Images/16.jpg" alt="iPhone">
+                    <h3>Apple iPhone 16 (128GB)</h3>
+                    <p>Price: ₹79,900</p>
+                </a>
+            </div>
+            <div class="product-card" data-company="Asus" data-storage="512GB" data-price="179900">
+                <a href="laptop-detail.html?name=Asus%20ROG%20Zephyrus%20G16%20(2024)">
+                    <img src="Images/zephyrusg14.png" alt="g14">
+                    <h3>Asus ROG Zephyrus G16 (2024) </h3>
+                    <p>Price: ₹1,79,900</p>
+                </a>
+            </div>
+            <div class="product-card" data-company="Sony" data-storage="512GB" data-price="24900">
+                <a href="audio-detail.html?name=Asus%20ROG%20Zephyrus%20G16%20(2024)">
+                    <img src="Images/sonyw.jpg" alt="g14">
+                    <h3>Sony WH-1000XM4 </h3>
+                    <p>Price: ₹24,900</p>
+                </a>
+            </div>
+            <div class="product-card" data-company="Sony" data-storage="512GB" data-price="24900">
+                <a href="laptop-detail.html?name=Asus%20ROG%20Zephyrus%20G16%20(2024)">
+                    <img src="Images/vs.jpg" alt="g14">
+                    <h3>ViewSonic </h3>
+                    <p>Price: ₹24,900</p>
+                </a>
+            </div>
+            <div class="product-card" data-company="Asus" data-storage="512GB" data-price="179900">
+                <a href="laptop-detail.html?name=Asus%20ROG%20Zephyrus%20G16%20(2024)">
+                    <img src="Images/xbox.jpg" alt="g14">
+                    <h3>Xbox (2024) </h3>
+                    <p>Price: ₹59,900</p>
+                </a>
+            </div>
+            <div class="product-card" data-company="Samsung" data-storage="512GB" data-price="69900">
+                <a href="laptop-detail.html?name=Asus%20ROG%20Zephyrus%20G16%20(2024)">
+                    <img src="Images/swatch.png" alt="samsung Watch">
+                    <h3>Samsung Watch 5 </h3>
+                    <p>Price: ₹69,900</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentBannerIndex = 0; // Track the current banner index
+        const banners = document.querySelectorAll('.banner'); // Get all banners
+
+        // Function to change the displayed banner
+        function changeBanner(direction) {
+            // Hide the current banner
+            banners[currentBannerIndex].style.display = 'none';
+
+            // Update the current index
+            currentBannerIndex += direction;
+
+            // Loop around if the index goes out of bounds
+            if (currentBannerIndex < 0) {
+                currentBannerIndex = banners.length - 1; // Go to the last banner
+            } else if (currentBannerIndex >= banners.length) {
+                currentBannerIndex = 0; // Go to the first banner
+            }
+
+            // Show the new banner
+            banners[currentBannerIndex].style.display = 'block';
+        }
+
+        // Initialize the first banner
+        banners.forEach((banner, index) => {
+            banner.style.display = index === currentBannerIndex ? 'block' : 'none'; // Show only the first banner
+        });
+    </script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VMR Electronics Mart | Privacy Policy</p>
+    </footer>    
+</body>
+</html>

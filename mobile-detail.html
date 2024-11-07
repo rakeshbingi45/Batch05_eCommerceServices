@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Detail - VMR Electronics Mart</title>
+    <link rel="stylesheet" href="mobile-detail_style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="site-title">
+            <a href="index.html" style="color: white; text-decoration: none;">VMR Electronics Mart</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+            <input type="text" placeholder="Search for products...">
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="mobile-detail">
+            <div class="mobile-image">
+                <img id="mobileImage" src="" alt="Mobile Image">
+            </div>
+            <div class="mobile-info">
+                <h3 id="mobileName"></h3>
+                <p id="mobilePrice"></p>
+                <p id="mobileDescription"></p>
+                <button id="buyButton">Buy Now</button>
+                <button id="addToCartButton">Add to Cart</button>
+                
+                <h4>Specifications</h4>
+                <ul id="mobileSpecifications">
+                    <!-- Specifications will be populated here -->
+                </ul>
+                
+                <h4>Features</h4>
+                <ul id="mobileFeatures">
+                    <!-- Features will be populated here -->
+                </ul>
+
+                <h4>User Reviews</h4>
+                <div id="userReviews">
+                    <!-- User reviews will be populated here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VMR Electronics Mart | Privacy Policy</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Detail -->
+    <script>
+        // Function to load mobile details from mobile.json
+        async function loadMobileDetails() {
+            try {
+                // Fetch the mobile data from mobile.json
+                const response = await fetch('mobiles.json');
+                const mobiles = await response.json();
+                
+                // Retrieve the mobile name from the URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const mobileName = urlParams.get('name');
+
+                // Find the mobile object by name
+                const mobile = mobiles.find(m => m.name === mobileName);
+
+                if (mobile) {
+                    // Update the HTML elements with mobile data
+                    document.getElementById("mobileName").innerText = mobile.name;
+                    document.getElementById("mobilePrice").innerText = `Price: ₹${mobile.price}`;
+                    document.getElementById("mobileImage").src = mobile.image;
+                    document.getElementById("mobileDescription").innerText = mobile.description;
+
+                    // Populate specifications
+                    const specsList = document.getElementById("mobileSpecifications");
+                    mobile.specifications.forEach(spec => {
+                        const listItem = document.createElement("li");
+                        listItem.innerText = spec;
+                        specsList.appendChild(listItem);
+                    });
+
+                    // Populate features
+                    const featuresList = document.getElementById("mobileFeatures");
+                    mobile.features.forEach(feature => {
+                        const listItem = document.createElement("li");
+                        listItem.innerText = feature;
+                        featuresList.appendChild(listItem);
+                    });
+
+                    // Populate user reviews
+                    const reviewsDiv = document.getElementById("userReviews");
+                    mobile.reviews.forEach(review => {
+                        const reviewDiv = document.createElement("div");
+                        reviewDiv.innerHTML = `<strong>${review.user}:</strong> ${review.comment}`;
+                        reviewsDiv.appendChild(reviewDiv);
+                    });
+                } else {
+                    document.getElementById("mobileName").innerText = "Mobile not found.";
+                }
+            } catch (error) {
+                console.error('Error fetching mobile details:', error);
+                document.getElementById("mobileName").innerText = "Error loading mobile details.";
+            }
+        }
+
+        // Call the function to load mobile details when the page is loaded
+        window.onload = loadMobileDetails;
+    </script>
+</body>
+</html>

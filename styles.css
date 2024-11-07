@@ -1,0 +1,221 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between; /* This aligns title to the left and search bar to the right */
+    align-items: center; /* Centers items vertically */
+}
+
+header .site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 3rem; /* Adds space between nav links */
+}
+
+header ul {
+    list-style: none;
+    padding: 0px;
+    margin: 10px;
+    display: flex;
+    gap: 3rem; /* Adds space between nav items */
+}
+
+header ul li a {
+    color: #282626;
+    text-decoration: none;
+}
+
+header input[type="text"] {
+    padding: 0.5rem;
+    border-color: rgb(0, 0, 0);
+    border-radius: 30px;
+}
+/* Banner Styles */
+.banner {
+    display: none; /* Initially hide all banners */
+    text-align: center; /* Center the banner text */
+    background-color: #f4f4f4; /* Banner background color */
+    padding: 10px 0px; /* Padding for the banner */
+}
+
+.banner img {
+    width: 100%; /* Make the banner image responsive */
+    max-height: auto; /* Set a max height for the banner */
+    object-fit: cover; /* Cover the space without distortion */
+}
+
+.nav-button {
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px 15px; /* Button padding */
+    background-color: rgba(0, 0, 0, 0.8); /* Button background color with transparency */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 40px; /* Rounded corners */
+    margin-top: 30px; /* Space around buttons */
+    position: absolute; /* Positioning relative to the banner */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to center vertically */
+}
+.nav-button:hover{
+    background-color: #525252;
+}
+.nav-button.previous {
+    left: 10px; /* Position the previous button on the left */
+}
+
+.nav-button.next {
+    right: 10px; /* Position the next button on the right */
+}
+
+/* Categories Section */
+.categories {
+    padding: 2rem;
+    text-align: center;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for categories */
+    gap: 2rem;
+    justify-items: center;
+}
+
+.category-item {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+.category-item img {
+    width: 100%;
+    max-width: 200px; /* Set a max width for images */
+    height: auto;
+}
+
+.category-item h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.category-item h3 a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+.featured-products {
+    text-align: center; /* Center the title and content */
+    margin: 20px 0; /* Add some spacing around the section */
+}
+
+.product-container {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Four columns */
+    gap: 40px; /* Space between the grid items */
+    margin: 20px auto; /* Center the grid and add margin */
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.product-card {
+    background: #f9f9f9; /* Card background color */
+    border: 1px solid #ddd; /* Border for the card */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    text-align: center; /* Center align text in the card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.product-card img {
+    width: 100%; /* Make images responsive */
+    border-radius: 8px; /* Match the card corners */
+}
+
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+/* Payment Section */
+.payment {
+    max-width: 500px; /* Limit the width of the form */
+    margin: 2rem auto; /* Center align the section and add space above and below */
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.payment h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.payment form {
+    display: flex;
+    flex-direction: column; /* Stack form fields vertically */
+    gap: 1rem;
+}
+
+.payment label {
+    font-weight: bold;
+    color: #333;
+}
+
+.payment input[type="text"], 
+.payment input[type="month"],
+.payment select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%; /* Full width for input fields */
+}
+
+.payment .order-summary {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.payment button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment button[type="submit"]:hover {
+    background-color: #525252;
+}
+
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}

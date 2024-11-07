@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - VMR Electronics Mart</title>
+    <link rel="stylesheet" href="cart-style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">
+            <a href="index.html" style="color: rgb(0, 0, 0); text-decoration: none;">VMR Electronics Mart</a>
+        </div>
+        <nav>
+            
+            <input type="text" size="50" placeholder="Search for products...">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="newlr.html">Welcome, Rakesh!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart-section">
+        <h2 class="cart-title">Your Shopping Cart</h2>
+
+        <!-- Example cart items -->
+        <div class="cart-item">
+            <img src="Images/pixel9.webp" alt="Product Image">
+            <div class="cart-item-info">
+                <div class="cart-item-title">Pixel 9 (128 GB)</div>
+                <div class="cart-item-price">₹ 79,999</div>
+            </div>
+            <button>Remove</button>
+        </div>
+
+        <div class="cart-item">
+            <img src="Images/profold.webp" alt="Product Image">
+            <div class="cart-item-info">
+                <div class="cart-item-title">Pixel 9 Pro Fold</div>
+                <div class="cart-item-price">₹ 1,79,999</div>
+            </div>
+            <button>Remove</button>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary">
+            <p>Total: ₹ 2,59,998</p>
+            <a href="payment.html"><button>Checkout</button></a>
+        </div>
+    </section>
+</body>
+</html>

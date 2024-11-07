@@ -1,0 +1,126 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+    background-color: #f4f4f4; /* Light background color */
+}
+
+
+header {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between; /* This aligns title to the left and search bar to the right */
+    align-items: center; /* Centers items vertically */
+}
+
+header .site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 3rem; /* Adds space between nav links */
+}
+
+header ul {
+    list-style: none;
+    padding: 0px;
+    margin: 10px;
+    display: flex;
+    gap: 3rem; /* Adds space between nav items */
+}
+
+header ul li a {
+    color: #282626;
+    text-decoration: none;
+}
+
+header input[type="text"] {
+    padding: 0.5rem;
+    border-color: rgb(0, 0, 0);
+    border-radius: 30px;
+}
+
+/* Main content section */
+.cart-section {
+    max-width: 1200px; /* Maximum width for the cart section */
+    margin: 20px auto; /* Center the section */
+    padding: 20px;
+    background: white; /* White background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Cart title */
+.cart-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Cart item styles */
+.cart-item {
+    display: flex; /* Flexbox for aligning items */
+    justify-content: space-between; /* Space between elements */
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Divider between items */
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Remove divider from last item */
+}
+
+.cart-item img {
+    width: 100px; /* Fixed size for product images */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.cart-item-info {
+    flex: 1; /* Allow this section to take remaining space */
+}
+
+.cart-item-title {
+    font-size: 18px; /* Larger font for item title */
+}
+
+.cart-item-price {
+    color: #28a745; /* Green color for price */
+    font-weight: bold;
+}
+
+button {
+    background: #000000; /* Primary button color */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px;
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer on hover */
+    transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background: #525252; /* Darker shade on hover */
+}
+
+/* Summary section styles */
+.summary {
+    margin-top: 20px;
+    text-align: right; /* Align summary to the right */
+    font-size: 20px; /* Larger font for summary */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align items to start */
+    }
+
+    .cart-item img {
+        margin: 0 0 10px 0; /* Space below image */
+    }
+}
